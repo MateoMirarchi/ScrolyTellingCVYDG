@@ -26,7 +26,7 @@
   pointer-events: none;
 }
 
-.hero-section,
+hero-section,
 .story-section,
 .timeline-section,
 .final-section {
@@ -35,6 +35,28 @@
   min-height: 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+/* Transición global entre páginas: crossfade + lift
+   Cada sección tiene una ligera opacidad/transform por defecto
+   y al recibir la clase `is-visible` se restaura (efecto distinto). */
+.page-shell > .hero-section,
+.page-shell > .story-section,
+.page-shell > .timeline-section,
+.page-shell > .final-section {
+  opacity: 0.86;
+  transform: translate3d(0, 1.6rem, 0) scale(0.996);
+  filter: blur(0.6px);
+  transition: opacity 680ms ease, transform 880ms cubic-bezier(0.22, 1, 0.36, 1), filter 600ms ease;
+}
+
+.page-shell > .hero-section.is-visible,
+.page-shell > .story-section.is-visible,
+.page-shell > .timeline-section.is-visible,
+.page-shell > .final-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
 }
 
 .hero-section {
@@ -58,16 +80,19 @@
 .hero-section__video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.08);
-  filter: saturate(0.72) contrast(1.06) brightness(0.52);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.06);
+  /* Hacemos la imagen más natural en brillo/saturación para evitar pantallas demasiado oscuras */
+  filter: saturate(0.96) contrast(1.02) brightness(1);
 }
 
 .hero-section__overlay {
   background:
-    linear-gradient(180deg, rgba(9, 10, 16, 0.22), rgba(9, 10, 16, 0.84)),
-    radial-gradient(circle at 20% 20%, rgba(224, 166, 73, 0.22), transparent 34%),
-    radial-gradient(circle at 75% 24%, rgba(92, 183, 181, 0.22), transparent 24%);
+    /* Aligero overlay para preservar legibilidad sin oscurecer totalmente la imagen */
+    linear-gradient(180deg, rgba(9, 10, 16, 0.16), rgba(9, 10, 16, 0.56)),
+    radial-gradient(circle at 20% 20%, rgba(224, 166, 73, 0.14), transparent 34%),
+    radial-gradient(circle at 75% 24%, rgba(92, 183, 181, 0.14), transparent 24%);
 }
 
 .hero-section__glow {
@@ -494,7 +519,7 @@
 }
 
 .final-section__credits {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 1.05rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;

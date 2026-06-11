@@ -1,4 +1,7 @@
 // Este módulo centraliza el contenido Lorem Ipsum y los fondos gráficos generados.
+import heroImg from '../assets/imagen pagina 1.jpeg'
+import page2Img from '../assets/imagen pagina 2.jpeg'
+import page3Img from '../assets/imagen pagina 3.png'
 
 function buildBackground({ base, accent, detail, label }) {
   const svg = `
@@ -44,12 +47,8 @@ export const storySections = [
       'Hoy, ese proceso casi desapareció. Frente a cualquier pregunta, la reacción es automática: buscar en Google o preguntarle a una IA. Ganamos tiempo, es verdad, pero estamos perdiendo la capacidad de pensar profundamente y aprender a convivir con la incertidumbre.',
     ],
     tagline: 'La consecuencia oculta de la respuesta inmediata.',
-    backgroundImage: buildBackground({
-      base: '#2a1d4a',
-      accent: '#5d3f9a',
-      detail: '#8b7fc9',
-      label: 'II',
-    }),
+    // Usamos la imagen proporcionada como fondo para la primera historia (Página 2).
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${page2Img}")`,
     accent: '#c4a2ff',
     align: 'left',
     transition: 'fade',
@@ -63,12 +62,8 @@ export const storySections = [
       'Cada vez que buscas o eliges algo, el sistema aprende. Y decide mostrarte solo lo que sabe que te gusta. Nos encierra en burbujas donde todo confirma lo que ya pensamos. El riesgo real no es volvernos dependientes, sino terminar creyendo que las decisiones que toma un sistema son ideas propias.',
     ],
     tagline: 'Cuando el algoritmo ordena tu realidad.',
-    backgroundImage: buildBackground({
-      base: '#3d2d5c',
-      accent: '#6b4fa0',
-      detail: '#9977cc',
-      label: 'III',
-    }),
+    // Usamos la imagen proporcionada como fondo integrado para la Página 3
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.22), rgba(10,12,20,0.56)), url("${page3Img}")`,
     accent: '#d4b8ff',
     align: 'right',
     transition: 'slideUp',
@@ -166,6 +161,5 @@ export const finalSection = {
     base: '#1a1428',
     accent: '#5d3f9a',
     detail: '#8b7fc9',
-    label: 'FIN',
   }),
 }
