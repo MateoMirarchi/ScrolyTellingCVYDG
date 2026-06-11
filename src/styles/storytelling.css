@@ -306,6 +306,14 @@
   text-wrap: balance;
 }
 
+.story-section__tagline {
+  margin: 1.2rem 0 0 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.6;
+}
+
 .story-section__cards {
   display: grid;
   gap: 1rem;
@@ -329,6 +337,8 @@
   margin: 0;
   color: var(--text-secondary);
   line-height: 1.7;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .timeline-section {
@@ -419,6 +429,7 @@
 }
 
 .timeline-panel__year,
+.timeline-panel__title,
 .final-section__credits {
   display: block;
   color: var(--text-primary);
@@ -428,6 +439,12 @@
   margin-bottom: 0.85rem;
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.timeline-panel__title {
+  margin: 0.8rem 0 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .final-section {

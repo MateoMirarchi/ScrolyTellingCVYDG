@@ -6,6 +6,7 @@ function StorySection({
   eyebrow,
   title,
   paragraphs,
+  tagline,
   backgroundImage,
   accent,
   align = 'left',
@@ -34,6 +35,11 @@ function StorySection({
           <Reveal as="h2" className="story-section__title" delay={100} variant="sweep">
             {title}
           </Reveal>
+          {tagline && (
+            <Reveal as="p" className="story-section__tagline" delay={150} variant="up">
+              {tagline}
+            </Reveal>
+          )}
         </div>
 
         <div className="story-section__cards">

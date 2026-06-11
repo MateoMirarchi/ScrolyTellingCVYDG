@@ -18,13 +18,13 @@ function TimelineSection({ entries }) {
 
       <div className="timeline-section__content">
         <Reveal as="p" className="timeline-section__eyebrow" variant="left">
-          Línea de tiempo
+          Página 4
         </Reveal>
         <Reveal as="h2" className="timeline-section__title" delay={100} variant="sweep">
-          Lorem ipsum temporal sit amet
+          Los pasos hacia la automatización: Nuestra historia reciente
         </Reveal>
         <Reveal as="p" className="timeline-section__summary" delay={180} variant="right">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.
+          Selecciona un año.
         </Reveal>
 
         <div className="timeline-section__buttons" role="tablist" aria-label="Hitos del relato">
@@ -45,6 +45,7 @@ function TimelineSection({ entries }) {
 
         <Reveal as="article" className="timeline-panel" key={activeEntry.year} role="tabpanel" variant="scale">
           <span className="timeline-panel__year">{activeEntry.year}</span>
+          {activeEntry.title && <h3 className="timeline-panel__title">{activeEntry.title}</h3>}
           <p>{activeEntry.copy}</p>
         </Reveal>
       </div>
