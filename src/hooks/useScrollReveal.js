@@ -1,4 +1,5 @@
 // El hook detecta entrada y salida del viewport para repetir animaciones según la dirección del scroll.
+//PRUEBA CORRECCION SCROLL
 import { useEffect, useRef, useState } from 'react'
 
 export function useScrollReveal(options = {}) {
