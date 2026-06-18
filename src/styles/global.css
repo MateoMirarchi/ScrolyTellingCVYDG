@@ -41,6 +41,7 @@ body {
   height: 100svh;
   min-width: 320px;
   background: var(--page-background);
+  /* Usamos el contenedor `.page-shell` como scroller principal. */
   overflow: hidden;
 }
 

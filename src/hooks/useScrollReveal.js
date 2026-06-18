@@ -16,11 +16,19 @@ export function useScrollReveal(options = {}) {
       return undefined
     }
 
-    lastScrollY.current = window.scrollY
+    // Si el proyecto usa un contenedor de scroll personalizado (p.ej. `.page-shell`),
+    // debemos usar ese elemento como `root` del IntersectionObserver para que
+    // la detección de intersección funcione con el scroll interno.
+    const rootNode = element.closest('.page-shell') || null
+
+    // Inicializamos la posición de scroll según el root utilizado
+    lastScrollY.current = rootNode ? rootNode.scrollTop : window.scrollY
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const nextScrollY = window.scrollY
+        // Cuando observamos un contenedor de scroll interno (p.ej. `.page-shell`),
+        // debemos consultar `scrollTop` sobre ese root. En caso contrario usar `window.scrollY`.
+        const nextScrollY = rootNode ? rootNode.scrollTop : window.scrollY
         const scrollDirection = nextScrollY >= lastScrollY.current ? 'down' : 'up'
 
         lastScrollY.current = nextScrollY
@@ -30,6 +38,7 @@ export function useScrollReveal(options = {}) {
         })
       },
       {
+        root: rootNode,
         threshold: options.threshold ?? 0.2,
         rootMargin: options.rootMargin ?? '0px 0px -10% 0px',
       },

@@ -1,4 +1,11 @@
 // Este módulo centraliza el contenido Lorem Ipsum y los fondos gráficos generados.
+import heroImg from '../assets/IMAGEN PORTADA.jpeg'
+import page2Img from '../assets/CAPITULO 1.jpeg'
+import page3Img from '../assets/CAPITULO 2.jpeg'
+import chapter3Img from '../assets/CAPITULO 3.jpeg'
+import chapter4Video from '../assets/VIDEO CAPITULO 4.mp4'
+import chapter5Img from '../assets/CAPITULO 5.png'
+import chapterFinalImg from '../assets/CAPITULO FINAL.jpeg'
 
 function buildBackground({ base, accent, detail, label }) {
   const svg = `
@@ -23,20 +30,11 @@ function buildBackground({ base, accent, detail, label }) {
   return `linear-gradient(135deg, rgba(10, 12, 20, 0.24), rgba(10, 12, 20, 0.62)), url("data:image/svg+xml,${encodeURIComponent(svg)}")`
 }
 
-const loremShort =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
-
-const loremMedium =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.'
-
-const loremLong =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo.'
-
 export const heroSection = {
-  title: 'Lorem Ipsum Dolor Amet',
-  subtitle:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.',
-  creator: 'Mateo Mirarchi',
+  title: 'REprogramando el pensamiento',
+  subtitle: 'El impacto de la Inteligencia Artificial en la vida humana.',
+  description: 'Hubo un tiempo en que pensar era algo puramente nuestro, un proceso natural e íntimo. Pero algo cambió. Casi sin darnos cuenta, hemos empezado a compartir esa tarea. Hoy, la gran pregunta no es qué puede hacer la tecnología, sino qué está haciendo con nosotros.',
+  cta: 'Comenzar el recorrido',
   video: {
     webm: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
     mp4: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
@@ -46,116 +44,107 @@ export const heroSection = {
 export const storySections = [
   {
     id: 'chapter-01',
-    eyebrow: 'Capítulo 01',
-    title: 'Lorem ipsum nascitur ridiculus mus',
-    paragraphs: [loremMedium, loremLong],
-    backgroundImage: buildBackground({
-      base: '#17405c',
-      accent: '#dd6c55',
-      detail: '#f1d9b2',
-      label: 'I',
-    }),
-    accent: '#ffd7b2',
+    title: 'Buscar antes de dudar',
+    paragraphs: [
+      '¿Te acuerdas de lo que se sentía no saber algo? Antes, tener una duda nos obligaba a detenernos. Teníamos que buscar, comparar, y armar la respuesta en nuestra cabeza. Era un pequeño esfuerzo, pero era nuestro esfuerzo.',
+      'Hoy, ese proceso casi desapareció. Frente a cualquier pregunta, la reacción es automática: buscar en Google o preguntarle a una IA. Ganamos tiempo, es verdad, pero estamos perdiendo la capacidad de pensar profundamente y aprender a convivir con la incertidumbre.',
+    ],
+    tagline: 'La consecuencia oculta de la respuesta inmediata.',
+    // Usamos la imagen proporcionada como fondo para la primera historia (Página 2).
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${page2Img}")`,
+    accent: '#c4a2ff',
     align: 'left',
+    transition: 'fade',
   },
   {
     id: 'chapter-02',
-    eyebrow: 'Capítulo 02',
-    title: 'Lorem ipsum euismod semper velit',
-    paragraphs: [loremShort, loremMedium],
-    backgroundImage: buildBackground({
-      base: '#3b214e',
-      accent: '#5cb7b5',
-      detail: '#f0ede1',
-      label: 'II',
-    }),
-    accent: '#c4fff8',
+    title: 'Creemos que elegimos nosotros',
+    paragraphs: [
+      'El problema no es solo que preguntamos, sino a quién le preguntamos. Creemos que las herramientas digitales son neutrales, pero no lo son. Cada vez que buscas o eliges algo, el sistema aprende. Y decide mostrarte solo lo que sabe que te gusta. Nos encierra en burbujas donde todo confirma lo que ya pensamos.',
+      'El riesgo real no es volvernos dependientes, sino terminar creyendo que las decisiones que toma un sistema son ideas propias.'
+    ],
+    tagline: 'Cuando el algoritmo ordena tu realidad.',
+    // Usamos la imagen proporcionada como fondo integrado para la Página 3
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.22), rgba(10,12,20,0.56)), url("${page3Img}")`,
+    accent: '#d4b8ff',
     align: 'right',
+    transition: 'slideUp',
   },
   {
     id: 'chapter-03',
-    eyebrow: 'Capítulo 03',
-    title: 'Lorem ipsum ultricies vehicula elit',
-    paragraphs: [loremLong, loremShort],
-    backgroundImage: buildBackground({
-      base: '#241b34',
-      accent: '#e0a649',
-      detail: '#f6f2eb',
-      label: 'III',
-    }),
-    accent: '#ffe6b8',
+    title: 'Dejar que la máquina decida',
+    paragraphs: [
+      'Aquí es donde la historia se vuelve complicada. Al principio era cómodo, pero ahora estamos delegando tareas que requieren razonamiento real. Esta imagen es una advertencia. Muestra qué pasa cuando perdemos el control sobre nuestras propias ideas. Si dejamos que la tecnología haga el trabajo mental difícil, corremos el riesgo de convertirnos en simples supervisores de lo que hace una máquina, olvidando cómo crear y pensar por nosotros mismos.',
+    ],
+    tagline: 'La línea que no deberíamos cruzar.',
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${chapter3Img}")`,
+    accent: '#7abaef',
     align: 'left',
+    transition: 'scaleIn',
   },
 ]
 
 export const timelineEntries = [
   {
-    year: '1998',
-    copy:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
+    year: '1956',
+    title: 'El origen de la computación',
+    copy: 'En la década de 1950, la computación se encontraba en su primera generación, caracterizada por el uso de tubos de vacío (como la ENIAC o la IBM 701) y la programación en lenguaje de máquina o ensamblador. Las computadoras eran activos exclusivamente militares o de grandes centros de investigación. El contexto de la Posguerra y el inicio de la Guerra Fría impulsaron el financiamiento estatal hacia proyectos de cálculo balístico y criptografía, sentando las bases operativas para la teoría de la información.',
   },
   {
-    year: '2004',
-    copy:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.',
+    year: '1997',
+    title: 'La tecnología se supera día a día',
+    copy: 'Hacia finales del siglo XX, la informática de consumo masivo ya se había consolidado a través de la arquitectura de la PC de escritorio y los microprocesadores de silicio de alta densidad (como la transición a los procesadores Intel Pentium). Es el año de la expansión comercial de Internet (la Web 1.0) y la transición hacia sistemas operativos de interfaz gráfica maduros (Windows 95/NT). Tras los períodos de desfinanciamiento conocidos como "Inviernos de la IA", la disciplina encontró viabilidad comercial specializándose en sistemas expertos y algoritmos de optimización.',
   },
   {
-    year: '2011',
-    copy:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.',
-  },
-  {
-    year: '2018',
-    copy:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis.',
+    year: '2017',
+    title: 'La IA pisa fuerte en la vida cotidiana',
+    copy: 'A mediados de la década de 2010, la digitalización global, los smartphones y las redes sociales generaron una explosión de datos sin precedentes (Big Data). Paralelamente, la industria de los videojuegos impulsó el desarrollo de las GPUs (Unidades de Procesamiento Gráfico). Investigadores como Geoffrey Hinton demostraron que las GPUs eran idóneas para procesar cálculos matriciales en paralelo, lo que permitió revivir y escalar las redes neuronales artificiales que habían sido teóricamente planteadas en los años 80 pero abandonadas por falta de potencia hardware.',
   },
   {
     year: '2026',
-    copy:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod.',
+    title: 'Inteligencia Artificial el fundamento de la tecnología moderna',
+    copy: 'En el año actual, 2026, la Inteligencia Artificial ha dejado de ser una aplicación aislada para convertirse en una tecnología de infraestructura generalizada (similar a la adopción histórica de la red eléctrica). Los centros de datos operan con clusters masivos de microchips optimizados para IA (como las arquitecturas avanzadas de GPUs y TPUs). La disciplina ha superado la etapa de los transformadores puramente basados en texto y se encuentra integrada verticalmente en los sistemas operativos, la automatización industrial, el desarrollo de software y la investigación científica predictiva.',
   },
 ]
 
 export const additionalSections = [
   {
     id: 'chapter-04',
-    eyebrow: 'Capítulo 04',
-    title: 'Lorem ipsum dictum porta mollis',
-    paragraphs: [loremMedium, loremShort],
+    title: 'Nos estamos volviendo espectadores',
+    paragraphs: [
+      'Es una paradoja extraña. Estamos usando todo nuestro ingenio humano para crear máquinas que imiten nuestra forma de razonar. Y mientras ellas se vuelven más inteligentes, nosotros nos volvemos más pasivos.',
+      'Al hacernos todo tan fácil y rápido, la tecnología está debilitando nuestra capacidad de concentrarnos y reflexionar a fondo. La máquina se queda con el proceso y nosotros nos quedamos solo con el resultado final, sin entender cómo llegamos ahí.',
+    ],
+    tagline: 'Una inversión de roles que debería llamarnos la atención.',
     backgroundImage: buildBackground({
-      base: '#0d3840',
-      accent: '#e87a62',
-      detail: '#f3efe4',
-      label: 'IV',
+      base: '#2a1d4a',
+      accent: '#5d3f9a',
+      detail: '#8b7fc9',
+      label: 'VI',
     }),
-    accent: '#ffd3c8',
+    accent: '#c4a2ff',
     align: 'right',
+    transition: 'slideDown',
+    video: {
+      mp4: chapter4Video,
+    },
   },
   {
     id: 'chapter-05',
-    eyebrow: 'Capítulo 05',
-    title: 'Lorem ipsum inceptos himenaeos nibh',
-    paragraphs: [loremLong, loremMedium],
-    backgroundImage: buildBackground({
-      base: '#42212c',
-      accent: '#5d90d7',
-      detail: '#f0d8c7',
-      label: 'V',
-    }),
-    accent: '#d3e6ff',
+    title: 'Recordando cómo era recordar',
+    paragraphs: [
+      'Llegando al final del recorrido, el espectador debería reflexionar sobre lo que hemos perdido. No se trata solo de la capacidad de pensar, sino de la capacidad de recordar lo que pensamos. Ya nadie retiene fechas, nombres o ideas complejas. La memoria se ha externalizado y con ella, la conexión con nuestro propio proceso mental. A veces parece que la tecnología nos ayuda a no olvidar, pero en realidad nos hace olvidar que olvidamos.',
+    ],
+    tagline: 'Adaptarnos sí, olvidar no.',
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${chapter5Img}")`,
+    accent: '#d9c4ff',
     align: 'left',
+    transition: 'fadeUp',
   },
 ]
 
 export const finalSection = {
-  title: 'Lorem ipsum finibus et suspendisse',
-  copy:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.',
-  credits: 'Mateo Mirarchi y Tobias Accorinti',
-  backgroundImage: buildBackground({
-    base: '#1e2438',
-    accent: '#9c4f68',
-    detail: '#f2ca87',
-    label: 'FIN',
-  }),
+  copy: 'Para el cierre de esta historia se deja en claro que el verdadero impacto de la IA radica en la delgada línea entre usarla como sustituto o como amplificador: el mal uso ocurre cuando delegamos por completo el pensamiento, la escritura o el diseño en el algoritmo, provocando una atrofia cognitiva donde el cerebro deja de ejercitar la memoria, pierde capacidad de resolución y homogeneiza la creatividad al saltarse el valioso proceso de enfrentarse a la hoja en blanco; por el contrario, el buen uso se logra cuando se la adopta como un copiloto o ayudante técnico que optimiza tareas mecánicas, rompe bloqueos iniciales y organiza información compleja, sirviendo como un trampolín para que el humano aporte el valor diferencial de la intuición, la empatía y la retórica. En síntesis, no está mal usar la IA para potenciar y acelerar nuestras capacidades, pero si lo está para reprogramar el pensamiento.',
+  credits: 'Mateo Mirarchi y Tobías Accorinti',
+  backgroundImage: `linear-gradient(135deg, rgba(10, 12, 20, 0.24), rgba(10, 12, 20, 0.62)), url("${chapterFinalImg}")`,
 }

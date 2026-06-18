@@ -15,9 +15,6 @@ function FinalSection({ title, copy, credits, backgroundImage }) {
       <div className="final-section__overlay" aria-hidden="true" />
 
       <div className="final-section__content">
-        <Reveal as="p" className="final-section__eyebrow" variant="left">
-          Cierre visual
-        </Reveal>
         <Reveal as="h2" className="final-section__title" delay={100} variant="sweep">
           {title}
         </Reveal>

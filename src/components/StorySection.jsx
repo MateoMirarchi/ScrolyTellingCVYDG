@@ -6,10 +6,12 @@ function StorySection({
   eyebrow,
   title,
   paragraphs,
+  tagline,
   backgroundImage,
   accent,
   align = 'left',
   sectionId,
+  video,
 }) {
   const [sectionRef, { isVisible, scrollDirection }] = useScrollReveal({ threshold: 0.2 })
   const introVariant = align === 'left' ? 'left' : 'right'
@@ -23,6 +25,20 @@ function StorySection({
       style={{ '--story-accent': accent }}
       data-scroll-direction={scrollDirection}
     >
+      {video && (
+        <video
+          className="story-section__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          {video.webm && <source src={video.webm} type="video/webm" />}
+          {video.mp4 && <source src={video.mp4} type="video/mp4" />}
+        </video>
+      )}
       <div className="story-section__visual" style={{ backgroundImage }} aria-hidden="true" />
       <div className="story-section__veil" aria-hidden="true" />
 
@@ -34,6 +50,11 @@ function StorySection({
           <Reveal as="h2" className="story-section__title" delay={100} variant="sweep">
             {title}
           </Reveal>
+          {tagline && (
+            <Reveal as="p" className="story-section__tagline" delay={150} variant="up">
+              {tagline}
+            </Reveal>
+          )}
         </div>
 
         <div className="story-section__cards">
