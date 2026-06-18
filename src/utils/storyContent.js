@@ -1,5 +1,6 @@
 // Este módulo centraliza el contenido Lorem Ipsum y los fondos gráficos generados.
 import heroImg from '../assets/IMAGEN PORTADA.jpeg'
+import synopsisVideo from '../assets/VIDEO ROBOT SINOPSIS.mp4'
 import page2Img from '../assets/CAPITULO 1.jpeg'
 import page3Img from '../assets/CAPITULO 2.jpeg'
 import chapter3Img from '../assets/CAPITULO 3.jpeg'
@@ -43,10 +44,26 @@ export const heroSection = {
 
 export const storySections = [
   {
+    id: 'chapter-sinopsis',
+    title: 'Sinopsis',
+    paragraphs: [
+      'En un mundo donde la Inteligencia Artificial se ha vuelto omnipresente, enfrentamos una pregunta crucial: ¿estamos utilizando la tecnología como herramienta para potenciar nuestras capacidades, o nos estamos permitiendo que reprograme la forma en que pensamos?',
+      'Este recorrido te invita a reflexionar sobre cómo la IA se ha infiltrado cada rincón de nuestras vidas, modificando nuestros hábitos de búsqueda, nuestras decisiones y nuestra capacidad de concentración. A través de cinco momentos clave, exploraremos la delgada línea entre la delegación y la amplificación, entre perder nuestro pensamiento y potenciarlo.',
+      'La pregunta no es si la IA es buena o mala. La pregunta verdadera es: ¿Qué estamos haciendo nosotros con ella? ¿O qué está haciendo ella con nosotros?'
+    ],
+    tagline: 'Un viaje por el impacto transformador de la Inteligencia Artificial en nuestro pensamiento.',
+    video: {
+      mp4: synopsisVideo,
+    },
+    accent: '#a78bfa',
+    align: 'left',
+    transition: 'fadeUp',
+  },
+  {
     id: 'chapter-01',
     title: 'Buscar antes de dudar',
     paragraphs: [
-      '¿Te acuerdas de lo que se sentía no saber algo? Antes, tener una duda nos obligaba a detenernos. Teníamos que buscar, comparar, y armar la respuesta en nuestra cabeza. Era un pequeño esfuerzo, pero era nuestro esfuerzo.',
+      '¿Te acordás de lo que se sentía no saber algo? Antes, tener una duda nos obligaba a detenernos. Teníamos que buscar, comparar, y armar la respuesta en nuestra cabeza. Era un pequeño esfuerzo, pero era nuestro esfuerzo.',
       'Hoy, ese proceso casi desapareció. Frente a cualquier pregunta, la reacción es automática: buscar en Google o preguntarle a una IA. Ganamos tiempo, es verdad, pero estamos perdiendo la capacidad de pensar profundamente y aprender a convivir con la incertidumbre.',
     ],
     tagline: 'La consecuencia oculta de la respuesta inmediata.',

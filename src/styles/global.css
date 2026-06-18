@@ -6,11 +6,11 @@
   --page-background: #0b0d14;
   --page-surface: #111524;
   --text-primary: #f3efe6;
-  --text-secondary: rgba(243, 239, 230, 0.76);
-  --text-muted: rgba(243, 239, 230, 0.52);
-  --line-soft: rgba(255, 255, 255, 0.08);
-  --card-background: rgba(9, 12, 20, 0.48);
-  --card-border: rgba(255, 255, 255, 0.12);
+  --text-secondary: #f3efe6c2;
+  --text-muted: #f3efe685;
+  --line-soft: #ffffff14;
+  --card-background: #090c147a;
+  --card-border: #ffffff1f;
   --shadow-soft: 0 28px 80px rgba(0, 0, 0, 0.28);
   --shadow-strong: 0 40px 120px rgba(0, 0, 0, 0.42);
   --font-sans: 'Outfit', 'Segoe UI', sans-serif;

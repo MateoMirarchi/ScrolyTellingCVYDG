@@ -935,3 +935,15 @@
     flex-direction: column;
   }
 }
+
+/* Estilos específicos para el capítulo de sinopsis con tonalidad violeta/lila */
+#chapter-sinopsis .story-section__video {
+  filter: saturate(0.86) contrast(1.08) brightness(1.02) hue-rotate(270deg) brightness(0.95);
+}
+
+#chapter-sinopsis .story-section__veil {
+  background:
+    linear-gradient(180deg, rgba(42, 29, 74, 0.3), rgba(42, 29, 74, 0.7)),
+    radial-gradient(circle at 25% 30%, color-mix(in srgb, #a78bfa 22%, transparent), transparent 32%),
+    radial-gradient(circle at 82% 26%, rgba(167, 139, 250, 0.12), transparent 24%);
+}
