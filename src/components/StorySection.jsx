@@ -11,6 +11,7 @@ function StorySection({
   accent,
   align = 'left',
   sectionId,
+  video,
 }) {
   const [sectionRef, { isVisible, scrollDirection }] = useScrollReveal({ threshold: 0.2 })
   const introVariant = align === 'left' ? 'left' : 'right'
@@ -24,6 +25,20 @@ function StorySection({
       style={{ '--story-accent': accent }}
       data-scroll-direction={scrollDirection}
     >
+      {video && (
+        <video
+          className="story-section__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          {video.webm && <source src={video.webm} type="video/webm" />}
+          {video.mp4 && <source src={video.mp4} type="video/mp4" />}
+        </video>
+      )}
       <div className="story-section__visual" style={{ backgroundImage }} aria-hidden="true" />
       <div className="story-section__veil" aria-hidden="true" />
 

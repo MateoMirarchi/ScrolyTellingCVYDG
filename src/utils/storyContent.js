@@ -1,7 +1,11 @@
 // Este módulo centraliza el contenido Lorem Ipsum y los fondos gráficos generados.
-import heroImg from '../assets/imagen pagina 1.jpeg'
-import page2Img from '../assets/imagen pagina 2.jpeg'
-import page3Img from '../assets/imagen pagina 3.png'
+import heroImg from '../assets/IMAGEN PORTADA.jpeg'
+import page2Img from '../assets/CAPITULO 1.jpeg'
+import page3Img from '../assets/CAPITULO 2.jpeg'
+import chapter3Img from '../assets/CAPITULO 3.jpeg'
+import chapter4Video from '../assets/VIDEO CAPITULO 4.mp4'
+import chapter5Img from '../assets/CAPITULO 5.png'
+import chapterFinalImg from '../assets/CAPITULO FINAL.jpeg'
 
 function buildBackground({ base, accent, detail, label }) {
   const svg = `
@@ -28,7 +32,7 @@ function buildBackground({ base, accent, detail, label }) {
 
 export const heroSection = {
   title: 'REprogramando el pensamiento',
-  subtitle: 'El impacto de la tecnología en nuestra capacidad de decidir.',
+  subtitle: 'El impacto de la Inteligencia Artificial en la vida humana.',
   description: 'Hubo un tiempo en que pensar era algo puramente nuestro, un proceso natural e íntimo. Pero algo cambió. Casi sin darnos cuenta, hemos empezado a compartir esa tarea. Hoy, la gran pregunta no es qué puede hacer la tecnología, sino qué está haciendo con nosotros.',
   cta: 'Comenzar el recorrido',
   video: {
@@ -40,8 +44,7 @@ export const heroSection = {
 export const storySections = [
   {
     id: 'chapter-01',
-    eyebrow: 'Página 2',
-    title: 'Recordando cómo era dudar',
+    title: 'Buscar antes de dudar',
     paragraphs: [
       '¿Te acuerdas de lo que se sentía no saber algo? Antes, tener una duda nos obligaba a detenernos. Teníamos que buscar, comparar, y armar la respuesta en nuestra cabeza. Era un pequeño esfuerzo, pero era nuestro esfuerzo.',
       'Hoy, ese proceso casi desapareció. Frente a cualquier pregunta, la reacción es automática: buscar en Google o preguntarle a una IA. Ganamos tiempo, es verdad, pero estamos perdiendo la capacidad de pensar profundamente y aprender a convivir con la incertidumbre.',
@@ -55,11 +58,10 @@ export const storySections = [
   },
   {
     id: 'chapter-02',
-    eyebrow: 'Página 3',
     title: 'Creemos que elegimos nosotros',
     paragraphs: [
-      'El problema no es solo que preguntamos, sino a quién le preguntamos. Creemos que las herramientas digitales son neutrales, pero no lo son.',
-      'Cada vez que buscas o eliges algo, el sistema aprende. Y decide mostrarte solo lo que sabe que te gusta. Nos encierra en burbujas donde todo confirma lo que ya pensamos. El riesgo real no es volvernos dependientes, sino terminar creyendo que las decisiones que toma un sistema son ideas propias.',
+      'El problema no es solo que preguntamos, sino a quién le preguntamos. Creemos que las herramientas digitales son neutrales, pero no lo son. Cada vez que buscas o eliges algo, el sistema aprende. Y decide mostrarte solo lo que sabe que te gusta. Nos encierra en burbujas donde todo confirma lo que ya pensamos.',
+      'El riesgo real no es volvernos dependientes, sino terminar creyendo que las decisiones que toma un sistema son ideas propias.'
     ],
     tagline: 'Cuando el algoritmo ordena tu realidad.',
     // Usamos la imagen proporcionada como fondo integrado para la Página 3
@@ -70,19 +72,12 @@ export const storySections = [
   },
   {
     id: 'chapter-03',
-    eyebrow: 'Página 5',
     title: 'Dejar que la máquina decida',
     paragraphs: [
-      'Aquí es donde la historia se vuelve complicada. Al principio era cómodo, pero ahora estamos delegando tareas que requieren razonamiento real.',
-      'Esta imagen es una advertencia. Muestra qué pasa cuando perdemos el control sobre nuestras propias ideas. Si dejamos que la tecnología haga el trabajo mental difícil, corremos el riesgo de convertirnos en simples supervisores de lo que hace una máquina, olvidando cómo crear y pensar por nosotros mismos.',
+      'Aquí es donde la historia se vuelve complicada. Al principio era cómodo, pero ahora estamos delegando tareas que requieren razonamiento real. Esta imagen es una advertencia. Muestra qué pasa cuando perdemos el control sobre nuestras propias ideas. Si dejamos que la tecnología haga el trabajo mental difícil, corremos el riesgo de convertirnos en simples supervisores de lo que hace una máquina, olvidando cómo crear y pensar por nosotros mismos.',
     ],
-    tagline: 'La pérdida de nuestra autonomía.',
-    backgroundImage: buildBackground({
-      base: '#0a0c14',
-      accent: '#1a3a52',
-      detail: '#3d5f7f',
-      label: 'V',
-    }),
+    tagline: 'La línea que no deberíamos cruzar.',
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${chapter3Img}")`,
     accent: '#7abaef',
     align: 'left',
     transition: 'scaleIn',
@@ -91,31 +86,30 @@ export const storySections = [
 
 export const timelineEntries = [
   {
+    year: '1956',
+    title: 'El origen de la computación',
+    copy: 'En la década de 1950, la computación se encontraba en su primera generación, caracterizada por el uso de tubos de vacío (como la ENIAC o la IBM 701) y la programación en lenguaje de máquina o ensamblador. Las computadoras eran activos exclusivamente militares o de grandes centros de investigación. El contexto de la Posguerra y el inicio de la Guerra Fría impulsaron el financiamiento estatal hacia proyectos de cálculo balístico y criptografía, sentando las bases operativas para la teoría de la información.',
+  },
+  {
+    year: '1997',
+    title: 'La tecnología se supera día a día',
+    copy: 'Hacia finales del siglo XX, la informática de consumo masivo ya se había consolidado a través de la arquitectura de la PC de escritorio y los microprocesadores de silicio de alta densidad (como la transición a los procesadores Intel Pentium). Es el año de la expansión comercial de Internet (la Web 1.0) y la transición hacia sistemas operativos de interfaz gráfica maduros (Windows 95/NT). Tras los períodos de desfinanciamiento conocidos como "Inviernos de la IA", la disciplina encontró viabilidad comercial specializándose en sistemas expertos y algoritmos de optimización.',
+  },
+  {
     year: '2017',
-    title: 'El origen en la traducción',
-    copy: 'Los investigadores buscaban una forma de mejorar los traductores automáticos. Lograron que la máquina dejara de traducir palabra por palabra y empezara a "leer" la oración completa para entender el contexto. Este avance invisible fue el motor de todo lo que vendría después.',
-  },
-  {
-    year: '2022',
-    title: 'El boom en nuestras manos',
-    copy: 'Herramientas como ChatGPT o los creadores de imágenes salen a la luz pública. La inteligencia artificial deja de ser un experimento de laboratorio y cualquier persona, desde su casa, puede pedirle a una pantalla que redacte un texto o dibuje algo desde cero.',
-  },
-  {
-    year: '2024',
-    title: 'El asistente que ve y escucha',
-    copy: 'La tecnología se vuelve una herramienta de trabajo diario. Las plataformas empiezan a incorporar la IA para usos más complejos: resumir videos largos, clonar voces, editar imágenes automáticamente o analizar grandes tablas de datos en segundos.',
+    title: 'La IA pisa fuerte en la vida cotidiana',
+    copy: 'A mediados de la década de 2010, la digitalización global, los smartphones y las redes sociales generaron una explosión de datos sin precedentes (Big Data). Paralelamente, la industria de los videojuegos impulsó el desarrollo de las GPUs (Unidades de Procesamiento Gráfico). Investigadores como Geoffrey Hinton demostraron que las GPUs eran idóneas para procesar cálculos matriciales en paralelo, lo que permitió revivir y escalar las redes neuronales artificiales que habían sido teóricamente planteadas en los años 80 pero abandonadas por falta de potencia hardware.',
   },
   {
     year: '2026',
-    title: 'La adopción invisible',
-    copy: 'La actualidad. Ya no hace falta entrar a una página especial para usar IA; está metida en nuestros teléfonos, programas de diseño y buscadores de internet. Es un compañero constante que nos ahorra tiempo, pero que también empieza a intervenir en cómo tomamos decisiones y armamos nuestras ideas.',
+    title: 'Inteligencia Artificial el fundamento de la tecnología moderna',
+    copy: 'En el año actual, 2026, la Inteligencia Artificial ha dejado de ser una aplicación aislada para convertirse en una tecnología de infraestructura generalizada (similar a la adopción histórica de la red eléctrica). Los centros de datos operan con clusters masivos de microchips optimizados para IA (como las arquitecturas avanzadas de GPUs y TPUs). La disciplina ha superado la etapa de los transformadores puramente basados en texto y se encuentra integrada verticalmente en los sistemas operativos, la automatización industrial, el desarrollo de software y la investigación científica predictiva.',
   },
 ]
 
 export const additionalSections = [
   {
     id: 'chapter-04',
-    eyebrow: 'Página 6',
     title: 'Nos estamos volviendo espectadores',
     paragraphs: [
       'Es una paradoja extraña. Estamos usando todo nuestro ingenio humano para crear máquinas que imiten nuestra forma de razonar. Y mientras ellas se vuelven más inteligentes, nosotros nos volvemos más pasivos.',
@@ -131,22 +125,18 @@ export const additionalSections = [
     accent: '#c4a2ff',
     align: 'right',
     transition: 'slideDown',
+    video: {
+      mp4: chapter4Video,
+    },
   },
   {
     id: 'chapter-05',
-    eyebrow: 'Página 7',
-    title: 'Construir nuevas formas de pensar',
+    title: 'Recordando cómo era recordar',
     paragraphs: [
-      'Llegamos al final de este recorrido, pero es el principio del verdadero trabajo. El futuro no se trata de apagar la tecnología, sino de aprender a usarla sin perdernos en el proceso.',
-      'Necesitamos cambiar el modelo. Ya no sirve solo memorizar información. El objetivo hoy, en las escuelas y en la vida, es formar mentes que sepan interpretar, cuestionar y usar estas herramientas como apoyo, pero nunca como un reemplazo de nuestra propia capacidad de pensar.',
+      'Llegando al final del recorrido, el espectador debería reflexionar sobre lo que hemos perdido. No se trata solo de la capacidad de pensar, sino de la capacidad de recordar lo que pensamos. Ya nadie retiene fechas, nombres o ideas complejas. La memoria se ha externalizado y con ella, la conexión con nuestro propio proceso mental. A veces parece que la tecnología nos ayuda a no olvidar, pero en realidad nos hace olvidar que olvidamos.',
     ],
-    tagline: 'Adaptarnos, sí, pero sin perder la capacidad crítica.',
-    backgroundImage: buildBackground({
-      base: '#4a3366',
-      accent: '#6b5a99',
-      detail: '#9988bb',
-      label: 'VII',
-    }),
+    tagline: 'Adaptarnos sí, olvidar no.',
+    backgroundImage: `linear-gradient(135deg, rgba(10,12,20,0.24), rgba(10,12,20,0.62)), url("${chapter5Img}")`,
     accent: '#d9c4ff',
     align: 'left',
     transition: 'fadeUp',
@@ -154,12 +144,7 @@ export const additionalSections = [
 ]
 
 export const finalSection = {
-  title: 'Construir nuevas formas de pensar',
-  copy: 'Llegamos al final de este recorrido, pero es el principio del verdadero trabajo. El futuro no se trata de apagar la tecnología, sino de aprender a usarla sin perdernos en el proceso.',
+  copy: 'Para el cierre de esta historia se deja en claro que el verdadero impacto de la IA radica en la delgada línea entre usarla como sustituto o como amplificador: el mal uso ocurre cuando delegamos por completo el pensamiento, la escritura o el diseño en el algoritmo, provocando una atrofia cognitiva donde el cerebro deja de ejercitar la memoria, pierde capacidad de resolución y homogeneiza la creatividad al saltarse el valioso proceso de enfrentarse a la hoja en blanco; por el contrario, el buen uso se logra cuando se la adopta como un copiloto o ayudante técnico que optimiza tareas mecánicas, rompe bloqueos iniciales y organiza información compleja, sirviendo como un trampolín para que el humano aporte el valor diferencial de la intuición, la empatía y la retórica. En síntesis, no está mal usar la IA para potenciar y acelerar nuestras capacidades, pero si lo está para reprogramar el pensamiento.',
   credits: 'Mateo Mirarchi y Tobías Accorinti',
-  backgroundImage: buildBackground({
-    base: '#1a1428',
-    accent: '#5d3f9a',
-    detail: '#8b7fc9',
-  }),
+  backgroundImage: `linear-gradient(135deg, rgba(10, 12, 20, 0.24), rgba(10, 12, 20, 0.62)), url("${chapterFinalImg}")`,
 }

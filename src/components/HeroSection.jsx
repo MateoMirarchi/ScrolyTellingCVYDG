@@ -1,6 +1,6 @@
 // La cabecera abre el recorrido con video de fondo y llamada a la acción.
 import Reveal from './Reveal.jsx'
-import heroImg from '../assets/imagen pagina 1.jpeg'
+import heroImg from '../assets/IMAGEN PORTADA.jpeg'
 
 function HeroSection({ title, subtitle, creator, video, backgroundImage }) {
   const bg =
@@ -28,9 +28,6 @@ function HeroSection({ title, subtitle, creator, video, backgroundImage }) {
         </Reveal>
 
         <Reveal as="div" className="hero-section__actions" delay={320} variant="up">
-          <a className="hero-button" href="#story-start-section">
-            Empezar la historia
-          </a>
         </Reveal>
       </div>
     </section>
